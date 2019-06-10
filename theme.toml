@@ -1,0 +1,10 @@
+name = "Plain N Simple"
+license = "MIT"
+licenselink = "https://github.com/hellozee/plain-n-simple/blob/master/LICENSE.md"
+description = "Simple theme with elegant looks"
+homepage = "https://hellozee.github.io"
+min_version = "0.1"
+
+[author]
+  name = "Kuntal Majumder"
+  homepage = "https://hellozee.github.io"

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ .Title }}</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Inconsolata&display=swap');
+
+        body{
+            background: #fff;
+            margin-left: 20px;
+            font-family: 'Inconsolata', monospace;
+        }
+
+        header{
+            font-size: 22px;
+            padding: 20px;
+            border-bottom: 1px solid #e0e0e0;
+            width: 50%;
+            color: #346ac1;
+        }
+
+        sub{
+            font-size: 15px;
+            color: #666666;
+        }
+
+        div.list{
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+        div.landing{
+            padding: 10px;
+            border-bottom: 1px solid #fff;
+            width: 50%;
+            display: grid;
+            grid-column-gap: 10px;
+            grid-template-columns: 20% 80%;
+            padding-left: 20px;
+        }
+
+        div.landing a:link, div.landing a:visited {
+            color: #000;
+            text-decoration: none;
+        }
+
+        div.landing  {
+            color: #000;
+        }
+
+        div.date{
+            color:#666666;
+        }
+  </style>
+</head>
+<body>
+    <header>{{ .Site.Title }}<br>
+        <sub>{{ .Site.Params.tagline }}</sub>
+    </header>

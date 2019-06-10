@@ -1,0 +1,71 @@
+<style>
+        @import url('https://fonts.googleapis.com/css?family=Slabo+27px&display=swap');
+        @import url('https://fonts.googleapis.com/css?family=Alegreya+SC&display=swap');
+
+        div.post{
+            font-family: 'Slabo 27px', serif;
+            margin-top: 50px;
+            padding-left: 40px;
+            width: 70%;
+        }
+
+        div.post-title{
+            font-family: 'Alegreya SC', serif;
+            padding: 30px;
+            font-size: 40px;
+            padding-left: 0px;
+        }
+
+        a{
+            color: #346ac1;
+            text-decoration: none;
+        }
+
+        a.to-index{
+            font-family: 'Inconsolata', monospace;
+        }
+
+        div.mail-drop{
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        span.mail{
+            font-weight: bold;
+        }
+
+        .image, figure img, img {                                                       
+            width: 50%;
+            display: block;                                                                                                                
+        }                                                                               
+                                                                                
+        .full-image, figure.full img, img[src*="full"] {                                
+            width: 70%;                                                                                                              
+        }
+
+        blockquote {                                                                    
+            margin: 1em;                                                                  
+            border-left: solid 0.1em #cecece;   
+            padding: 1px;                                          
+            padding-left: 20px;                                                           
+            position: relative;                                                           
+            background-color: #efefef;     
+            width: 70%;                                                                               
+        }
+
+</style>
+<link rel="stylesheet" href="/css/syntax.css" />
+<div class="post">
+    <a href="{{ .Site.BaseURL }}" class="to-index">← [Index]</a> 
+<div class="post-title">{{ .Title }}</div>
+<h6>{{ .Date.Format "Mon, Jan 2, 2006" }} - {{ .Params.Author | default .Site.Author.name }} -                                                                
+    {{ range $i, $t := .Params.tags }}                              
+        {{ if $i }}, {{ end }}                                      
+        <a href="/tags/{{$t | urlize }}/">#{{ $t }}</a>             
+    {{ end }}
+</h6>
+{{ .Content }}
+[<a href="#top">Back To Top</a>]
+<div class="mail-drop">Have something to say about the post? Drop a mail on <span class="mail">{{ .Site.Author.email }}</span></div>
+</div>
+{{ partial "footer.html" . }}
